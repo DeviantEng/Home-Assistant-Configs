@@ -1,0 +1,39 @@
+rooms:
+  view: yes
+  name: Rooms
+  entities:
+    - group.kitchen
+    - group.dining_room
+    - group.living_room
+    - group.tv_room
+
+kitchen:
+  name: 'Kitchen'
+  entities:
+    - light.light_kitchen_level_21_0
+    - lock.deadbolt_kitchen_locked_9_0
+    - sensor.kitchen_door_status
+    - sensor.kitchen_motion
+    - sensor.multisensor_kitchen_temperature_8_1
+    - sensor.multisensor_kitchen_relative_humidity_8_5
+
+dining_room:
+  name: 'Dining Room'
+  entities:
+  - switch.lamp_diningroom_switch_20_0
+
+living_room:
+  name: 'Living Room'
+  entities:
+    - sensor.front_door_status
+    - switch.lamp_fishtank_switch_24_0
+
+tv_room:
+  name: 'TV Room'
+  entities:
+    - switch.lamp_tvroom_switch_22_0
+    - sensor.tvroom_motion
+    - sensor.ammosafe_door_status
+    - sensor.gunsafe_motion
+    - sensor.multisensor_gunsafe_temperature_23_1
+    - sensor.multisensor_gunsafe_relative_humidity_23_5

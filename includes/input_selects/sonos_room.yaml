@@ -1,0 +1,8 @@
+sonos_room:
+  name: 'Sonos Room'
+  options:
+    - 'Master%20Bedroom'
+    - 'TV%20Room'
+    - 'Off'
+  initial: 'Off'
+#  icon: mdi:sonos

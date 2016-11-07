@@ -1,0 +1,51 @@
+homeassistant:
+  name: Home
+  latitude: !secret lat
+  longitude: !secret long
+  elevation: !secret elev
+  unit_system: imperial
+  temperature_unit: F
+  time_zone: !secret tz
+  customize: !include includes/customize.yaml
+
+frontend:
+history:
+logbook:
+updater:
+  reporting: no
+recorder:
+  purge_days: 3
+
+
+http: !include includes/http.yaml
+
+logger: !include includes/logger.yaml
+
+notify: !include includes/notify.yaml
+
+sun: !include includes/sun.yaml
+
+zwave: !include includes/zwave.yaml
+
+
+automation: !include_dir_merge_list includes/automations
+
+camera: !include_dir_merge_list includes/cameras
+
+device_tracker: !include_dir_merge_list includes/device_trackers
+
+group: !include_dir_merge_named includes/groups
+
+input_select: !include_dir_merge_named includes/input_selects
+
+input_slider: !include_dir_merge_named includes/input_sliders
+
+script: !include_dir_merge_named includes/scripts
+
+sensor: !include_dir_merge_list includes/sensors
+
+shell_command: !include_dir_merge_named includes/shell_commands
+
+switch: !include_dir_merge_list includes/switches
+
+zone: !include_dir_merge_named includes/zones

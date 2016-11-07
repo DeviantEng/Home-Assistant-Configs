@@ -1,0 +1,23 @@
+- alias: 'Fish Tank Lamp On'
+  trigger:
+    platform: time
+    after: '08:48'
+  condition:
+    condition: state
+    entity_id: switch.lamp_fisktank_switch_24_0
+    state: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.lamp_fishtank_switch_24_0
+
+- alias: 'Fish Tank Lamp Off'
+  trigger:
+    platform: time
+    after: '11:11'
+  condition:
+    condition: state
+    entity_id: switch.lamp_fishtank_switch_24_0
+    state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_fishtank_switch_24_0

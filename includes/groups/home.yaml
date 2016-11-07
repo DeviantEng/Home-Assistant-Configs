@@ -1,0 +1,19 @@
+default_view:
+  view: yes
+  entities:
+    - group.home
+    - group.scenes
+
+home:
+  name: 'Home'
+  entities:
+    - sensor.sun_state
+    - device_tracker.phone_derek_n6p
+    - device_tracker.phone_andrea_iphone6
+    - sensor.devplex
+    - camera.uvm01
+
+scenes:
+  name: 'Scenes'
+  entities:
+    - switch.baby_bedtime

@@ -1,0 +1,7 @@
+hvac_fan_mode:
+  name: 'Fan Mode'
+  options:
+    - 'Auto'
+    - 'On'
+  initial: Auto
+  icon: mdi:fan

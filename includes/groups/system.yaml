@@ -1,0 +1,15 @@
+system:
+  view: yes
+  name: System
+  entities:
+    - group.batterylevels
+
+batterylevels:
+  name: 'Battery Levels'
+  entities:
+    - sensor.climate_downstairs_batterylevel
+    - sensor.lock_deadbolt_kitchen_batterylevel
+    - sensor.multisensor_kitchen_batterylevel
+    - sensor.door_kitchen_batterylevel
+    - sensor.door_front_batterylevel
+    - sensor.door_ammosafe_batterylevel

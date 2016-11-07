@@ -1,0 +1,22 @@
+- alias: 'Set thermostat temperature based on input_slider'
+  trigger:
+    platform: state
+    entity_id: input_slider.hvac_target_temp
+  action:
+    service: climate.set_temperature
+    entity_id: climate.thermostat_downstairs_cooling_1_2_2
+    data_template:
+      temperature: "{{ states('input_slider.hvac_target_temp') }}"
+
+- alias: 'Set input_slider based on thermostat temperature'
+  trigger:
+    platform: state
+    entity_id: climate.thermostat_downstairs_cooling_1_2_2
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.temperature != trigger.from_state.attributes.temperature }}'
+  action:
+    service: input_slider.select_value
+    entity_id: input_slider.hvac_target_temp
+    data_template:
+      option: '{{ states.climate.thermostat_downstairs_cooling_1_2_2.attributes.temperature }}' 

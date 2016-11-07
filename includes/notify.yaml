@@ -1,0 +1,4 @@
+- platform: pushover
+  name: pushover
+  api_key: !secret api_key
+  user_key: !secret user_key

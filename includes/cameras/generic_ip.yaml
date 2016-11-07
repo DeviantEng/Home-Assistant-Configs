@@ -1,0 +1,7 @@
+#- platform: uvc
+#  nvr: !secret uvc_nvr
+#  key: !secret uvc_key
+
+- platform: generic
+  name: 'UVM01'
+  still_image_url: http://uvc.local.deveng.us:7080/api/2.0/snapshot/camera/576030c0e4b06ae23343905f?force=true&apiKey=AJfGvJEPkWkHrxDn

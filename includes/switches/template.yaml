@@ -1,0 +1,9 @@
+#- platform: template
+#  switches:
+#    baby_bedtime:
+#      friendly_name: 'Baby Bedtime'
+#      value_template: 
+#      turn_on:
+#        service: shell_command.sonos_fav_babylullayradio
+#      turn_off:
+#        service: shell_command.sonos_masterbedroomoff

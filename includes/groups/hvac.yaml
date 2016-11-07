@@ -1,0 +1,20 @@
+hvac:
+  name: HVAC
+  view: yes
+  entities:
+    - group.hvac_downstairs
+    - group.hvac_upstairs
+
+hvac_downstairs:
+  name: 'Downstairs'
+  entities:
+    - input_select.hvac_operation_mode
+    - input_select.hvac_fan_mode
+    - input_slider.hvac_target_temp
+    - sensor.climate_downstairs_temperature
+    - sensor.thermostat_downstairs_temperature_2_1
+    - sensor.thermostat_downstairs_relative_humidity_2_5_3
+
+hvac_upstairs:
+  name: 'Upstairs'
+  entities:

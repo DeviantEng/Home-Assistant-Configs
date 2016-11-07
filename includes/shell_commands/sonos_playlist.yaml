@@ -1,0 +1,1 @@
+sonos_playlist_plexbluegrass: '/usr/bin/curl +X POST http://172.16.1.128:5005/TV%20Room/playlist/Plex%20-%20Bluegrass'

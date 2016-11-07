@@ -1,0 +1,18 @@
+- alias: 'Lock - Kitchen Notify Unlock'
+  trigger:
+    - platform: state
+      entity_id: lock.deadbolt_kitchen_locked_9_0
+      state: 'unlocked'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.phone_derek_n6p
+        state: not_home
+      - condition: state
+        entity_id: device_tracker.phone_andrea_iphone6
+        state: not_home
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Kitchen door was just unlocked!"

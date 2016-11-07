@@ -1,0 +1,7 @@
+hvac_target_temp:
+  name: 'Set Target Temp'
+  min: 55
+  max: 90
+  step: 1
+  initial: 70
+#  icon: mdi:thermometer-lines

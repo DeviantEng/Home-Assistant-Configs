@@ -1,0 +1,13 @@
+- alias: 'Update Available Notify'
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+    - platform: event
+      event_type: homeassistant_start
+  condition:
+    - condition: template
+      value_template: "{{ states('updater.updater') != 'unknown' }}"
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Home Assistant {{ states('updater.updater') }} is now available."

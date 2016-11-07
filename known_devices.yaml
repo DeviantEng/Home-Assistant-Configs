@@ -1,0 +1,156 @@
+
+phone_andrea_iphone6:
+#  name: Phone Andrea iPhone6
+  name: 'Andrea'
+  mac: 48:43:7C:B8:4C:B5
+  picture: 
+  track: yes
+  hide_if_away: no
+
+phone_derek_n6p:
+#  name: android-b262f9c32afdf508
+  name: 'Derek'
+  mac: AC:CF:85:C9:DE:88
+  picture: 
+  track: yes
+  hide_if_away: no
+
+owlet60f189db5210:
+  name: Owlet-60f189db5210
+  mac: 60:F1:89:DB:52:10
+  picture: 
+  track: no
+  hide_if_away: no
+
+console_ps4:
+  name: Console PS4
+  mac: B0:05:94:43:D0:B1
+  picture: 
+  track: no
+  hide_if_away: no
+
+scanner_office:
+  name: Scanner Office
+  mac: AC:D1:B8:79:8D:6A
+  picture: 
+  track: no
+  hide_if_away: no
+
+uvcmicro73a9:
+  name: UVC-Micro-73a9
+  mac: 44:D9:E7:95:73:A9
+  picture: 
+  track: no
+  hide_if_away: no
+
+qca4002:
+  name: QCA4002
+  mac: 84:5D:D7:50:C8:6A
+  picture: 
+  track: no
+  hide_if_away: no
+
+andreasimac:
+  name: Andreas-iMac
+  mac: B8:09:8A:CB:E6:B7
+  picture: 
+  track: no
+  hide_if_away: no
+
+devlaptop:
+  name: DevLaptop
+  mac: 4C:34:88:D1:9B:42
+  picture: 
+  track: no
+  hide_if_away: no
+
+computer_derek_va:
+  name: Computer Derek VA
+  mac: DC:53:60:F5:20:94
+  picture: 
+  track: no
+  hide_if_away: no
+
+tv_livingroom:
+  name: TV LivingRoom
+  mac: CC:95:D7:1B:EE:B0
+  picture: 
+  track: no
+  hide_if_away: no
+
+chromecast_office:
+  name: Chromecast Office
+  mac: 80:D2:1D:43:C3:CB
+  picture: 
+  track: no
+  hide_if_away: no
+
+chromecast:
+  name: Chromecast
+  mac: 54:60:09:40:ED:9A
+  picture: 
+  track: no
+  hide_if_away: no
+
+tv_office:
+  name: TV Office
+  mac: CC:95:D7:7E:58:D8
+  picture: 
+  track: no
+  hide_if_away: no
+
+uvcmon:
+  name: uvc-mon
+  mac: 74:DA:38:06:4F:2E
+  picture: 
+  track: no
+  hide_if_away: no
+
+lubuntu:
+  name: lubuntu
+  mac: 48:D2:24:2D:EF:91
+  picture: 
+  track: no
+  hide_if_away: no
+
+androide81b132518d6df21:
+  name: android-e81b132518d6df21
+  mac: FC:C2:DE:2B:33:5B
+  picture: 
+  track: no
+  hide_if_away: no
+
+raven:
+  name: Raven
+  mac: 00:23:4E:61:3C:A2
+  picture: 
+  track: no
+  hide_if_away: no
+
+android9cec85cb259d0d70:
+  name: android-9cec85cb259d0d70
+  mac: EC:1F:72:3D:49:60
+  picture: 
+  track: no
+  hide_if_away: no
+
+tablet_derek_dell:
+  name: Tablet Derek Dell
+  mac: 98:90:96:FB:CE:1A
+  picture: 
+  track: no
+  hide_if_away: no
+
+computer_derek_mbp:
+  name: Computer Derek MBP
+  mac: A0:99:9B:14:B0:23
+  picture: 
+  track: no
+  hide_if_away: no
+
+androidc7f2b3857f2e5675:
+  hide_if_away: false
+  mac: 4C:66:41:62:B7:B1
+  name: android-c7f2b3857f2e5675
+  picture: null
+  track: false

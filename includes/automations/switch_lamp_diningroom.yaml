@@ -1,0 +1,24 @@
+- alias: 'Dining Room Lamp On'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  condition:
+    condition: state
+    entity_id: switch.lamp_diningroom_switch_20_0
+    state: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.lamp_diningroom_switch_20_0
+
+- alias: 'Dining Room Lamp Off'
+  trigger:
+    platform: time
+    after: '00:14'
+  condition:
+    condition: state
+    entity_id: switch.lamp_diningroom_switch_20_0
+    state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_diningroom_switch_20_0

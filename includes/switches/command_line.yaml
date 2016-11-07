@@ -1,0 +1,6 @@
+- platform: command_line
+  switches:
+    baby_bedtime:
+      friendly_name: 'Baby Bedtime'
+      command_on: '/usr/bin/curl -X GET http://172.16.1.128:5005/Master%20Bedroom/volume/7 && /usr/bin/curl +X POST http://172.16.1.128:5005/Master%20Bedroom/favorite/Lullaby%20Radio'
+      command_off: '/usr/bin/curl +X POST http://172.16.1.128:5005/Master%20Bedroom/pause'

@@ -1,0 +1,37 @@
+- alias: 'Kitchen Door Notify open'
+  trigger:
+    - platform: state
+      entity_id: sensor.kitchen_door_status
+      state: 'Open'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.phone_derek_n6p
+        state: not_home
+      - condition: state
+        entity_id: device_tracker.phone_andrea_iphone6
+        state: not_home
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Kitchen door was just opened!"
+
+- alias: 'Front Door Notify open'
+  trigger:
+    - platform: state
+      entity_id: sensor.front_door_status
+      state: 'Open'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.phone_derek_n6p
+        state: not_home
+      - condition: state
+        entity_id: device_tracker.phone_andrea_iphone6
+        state: not_home
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Front door was just opened!"

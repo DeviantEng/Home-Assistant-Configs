@@ -1,0 +1,9 @@
+- alias: 'Gun Safe Motion Notify'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.multisensor_gunsafe_sensor_23_0
+      state: 'on'
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Somebody opened your gun safe; AAAHHHH!!!"

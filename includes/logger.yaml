@@ -1,0 +1,5 @@
+# Log Severities: notset, debug, info, warn, warning, error, fatal, critical
+
+default: info
+#logs:
+#  homeassistant.components.notify: debug

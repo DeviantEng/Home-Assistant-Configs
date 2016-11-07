@@ -1,0 +1,9 @@
+hvac_operation_mode:
+  name: 'Operating Mode'
+  options:
+    - 'Auto'
+    - 'Cool'
+    - 'Heat'
+    - 'Off'
+  initial: Cool
+  icon: mdi:settings

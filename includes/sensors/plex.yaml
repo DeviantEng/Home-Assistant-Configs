@@ -1,0 +1,6 @@
+- platform: plex
+  name: !secret plexname
+  host: !secret plexhost
+  port: !secret plexport
+  username: !secret plexuser
+  password: !secret plexpass
