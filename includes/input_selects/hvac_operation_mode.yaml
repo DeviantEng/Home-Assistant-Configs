@@ -1,3 +1,6 @@
+#####
+### hvac_operation_mode input_select used in thermostat-related automation rules to set the thermostat operation_mode based on input from this select
+#####
 hvac_operation_mode:
   name: 'Operating Mode'
   options:

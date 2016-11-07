@@ -1,3 +1,6 @@
+#####
+### Send notification if Kitchen Lock is unlocked, and derek_n6p AND andrea_iphone6 are not_home
+#####
 - alias: 'Lock - Kitchen Notify Unlock'
   trigger:
     - platform: state

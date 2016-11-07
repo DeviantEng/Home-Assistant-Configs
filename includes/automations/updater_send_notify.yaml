@@ -1,3 +1,6 @@
+#####
+### Send notification of new HASS version when new version is detected, as well as on startup of HASS
+#####
 - alias: 'Update Available Notify'
   trigger:
     - platform: state

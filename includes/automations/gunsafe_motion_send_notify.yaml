@@ -1,3 +1,6 @@
+#####
+### Send notification anytime motion is detected inside gunsafe
+#####
 - alias: 'Gun Safe Motion Notify'
   trigger:
     - platform: state
@@ -7,3 +10,16 @@
     service: notify.pushover
     data_template:
       message: "Somebody opened your gun safe; AAAHHHH!!!"
+
+#####
+### Send notification anytime door is opened on ammosafe
+#####
+- alias: 'Ammo Safe door-open Notify'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_ammosafe_sensor_26_0
+      state: 'on'
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Somebody opened your ammo safe; AAAHHHH!!!"

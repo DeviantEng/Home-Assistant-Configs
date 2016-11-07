@@ -1,3 +1,6 @@
+#####
+### Turn on TV Room lamp 30 minutes before sunset, if it's off
+#####
 - alias: 'TV Room Lamp On'
   trigger:
     platform: sun
@@ -11,14 +14,53 @@
     service: homeassistant.turn_on
     entity_id: switch.lamp_tvroom_switch_22_0
 
+
+#####
+### Turn off TV Room lamp at 12:14AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
+### First try
+#####
 - alias: 'TV Room Lamp Off'
   trigger:
     platform: time
-    after: '00:15'
+    after: '00:14'
   condition:
-    condition: state
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.multisensor_tvroom_sensor_28_0
+        state: off
+        for:
+          hours: 0
+          minutes: 5
+          seconds: 0
+  action:
+    service: homeassistant.turn_off
     entity_id: switch.lamp_tvroom_switch_22_0
-    state: 'on'
+
+#####
+### Turn off TV Room lamp at 01:14AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
+### Second try in case the lamp doesn't get turned off during the first try
+#####
+- alias: 'TV Room Lamp Off (second try)'
+  trigger:
+    platform: time
+    after: '01:14'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.multisensor_tvroom_sensor_28_0
+        state: off
+        for:
+          hours: 0
+          minutes: 5
+          seconds: 0
   action:
     service: homeassistant.turn_off
     entity_id: switch.lamp_tvroom_switch_22_0

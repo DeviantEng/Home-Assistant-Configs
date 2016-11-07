@@ -1,3 +1,6 @@
+#####
+### Turn on Fish Tank lamp at 08:48AM, if it's off
+#####
 - alias: 'Fish Tank Lamp On'
   trigger:
     platform: time
@@ -10,6 +13,9 @@
     service: homeassistant.turn_on
     entity_id: switch.lamp_fishtank_switch_24_0
 
+#####
+### Turn off Fish Tank lamp at 11:11PM, if it's on
+#####
 - alias: 'Fish Tank Lamp Off'
   trigger:
     platform: time

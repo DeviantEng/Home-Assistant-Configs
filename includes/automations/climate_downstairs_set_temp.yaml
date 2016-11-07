@@ -1,3 +1,6 @@
+#####
+### Sets the thermostat temperature when the hvac_target_temp input_slider is changed
+#####
 - alias: 'Set thermostat temperature based on input_slider'
   trigger:
     platform: state
@@ -8,6 +11,10 @@
     data_template:
       temperature: "{{ states('input_slider.hvac_target_temp') }}"
 
+#####
+### Sets the hvac_target_temp input_slider when the thermostat temperature is manually changed
+### CURRENTLY NOT WORKING!
+#####
 - alias: 'Set input_slider based on thermostat temperature'
   trigger:
     platform: state

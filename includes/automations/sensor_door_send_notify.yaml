@@ -1,3 +1,6 @@
+#####
+### Send notification if Kitchen Door is opened, and derek_n6p AND andrea_iphone6 are not_home
+#####
 - alias: 'Kitchen Door Notify open'
   trigger:
     - platform: state
@@ -17,6 +20,10 @@
     data_template:
       message: "Kitchen door was just opened!"
 
+
+#####
+### Send notification if Front Door is opened, and derek_n6p AND andrea_iphone6 are not_home
+#####
 - alias: 'Front Door Notify open'
   trigger:
     - platform: state

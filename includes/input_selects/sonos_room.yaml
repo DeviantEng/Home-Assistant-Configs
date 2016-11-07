@@ -1,3 +1,6 @@
+#####
+### sonos_room input_select used for Sonos-related automation rules to set the destination output room/group
+#####
 sonos_room:
   name: 'Sonos Room'
   options:

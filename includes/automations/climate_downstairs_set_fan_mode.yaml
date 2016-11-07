@@ -1,3 +1,6 @@
+#####
+### Sets the thermostat fan_mode when the hvac_fan_mode input_select is changed
+#####
 - alias: 'Set thermostat fan_mode based on input_select'
   trigger:
     platform: state
@@ -13,6 +16,9 @@
               On Low
           {%- endif -%}
 
+#####
+### Sets the hvac_fan_mode input_select when the thermostat fan_mode is manually changed
+#####
 - alias: 'Set input_select based on thermostat fan_mode'
   trigger:
     platform: state

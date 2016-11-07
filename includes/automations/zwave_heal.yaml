@@ -1,3 +1,6 @@
+#####
+### Heal Z-Wave network every night at 02:31AM
+#####
 - alias: 'Z-Wave Heal at 2:31am'
   trigger:
     platform: time
