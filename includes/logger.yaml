@@ -2,4 +2,4 @@
 
 default: info
 #logs:
-#  homeassistant.components.notify: debug
+#  homeassistant.components.automation: debug

@@ -24,14 +24,14 @@
     platform: time
     after: '00:14'
   condition:
-    condition: 'and'
+    condition: and
     conditions:
       - condition: state
         entity_id: switch.lamp_tvroom_switch_22_0
         state: 'on'
       - condition: state
         entity_id: binary_sensor.multisensor_tvroom_sensor_28_0
-        state: off
+        state: 'off'
         for:
           hours: 0
           minutes: 5
@@ -49,14 +49,14 @@
     platform: time
     after: '01:14'
   condition:
-    condition: 'and'
+    condition: and
     conditions:
       - condition: state
         entity_id: switch.lamp_tvroom_switch_22_0
         state: 'on'
       - condition: state
         entity_id: binary_sensor.multisensor_tvroom_sensor_28_0
-        state: off
+        state: 'off'
         for:
           hours: 0
           minutes: 5

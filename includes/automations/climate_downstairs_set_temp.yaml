@@ -26,4 +26,4 @@
     service: input_slider.select_value
     entity_id: input_slider.hvac_target_temp
     data_template:
-      option: '{{ states.climate.thermostat_downstairs_cooling_1_2_2.attributes.temperature }}' 
+      value: '{{ states.climate.thermostat_downstairs_cooling_1_2_2.attributes.temperature }}' 
