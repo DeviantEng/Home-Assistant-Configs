@@ -6,6 +6,7 @@ rooms:
     - group.dining_room
     - group.living_room
     - group.tv_room
+    - group.garage
 
 kitchen:
   name: 'Kitchen'
@@ -37,3 +38,8 @@ tv_room:
     - sensor.gunsafe_motion
     - sensor.multisensor_gunsafe_temperature_23_1
     - sensor.multisensor_gunsafe_relative_humidity_23_5
+
+garage:
+  name: 'Garage'
+  entities:
+    - switch.garage_exterior_lights

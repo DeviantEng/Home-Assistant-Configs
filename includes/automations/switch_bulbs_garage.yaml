@@ -1,0 +1,31 @@
+#####
+### Turn on Garage Exterior Lights 30 minutes before sunset, if it's off
+#####
+- alias: 'Garage Exterior Lights On'
+  trigger:
+    platform: sun
+    event: sunset
+  condition:
+    condition: state
+    entity_id: switch.garage_exterior_lights
+    state: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.garage_exterior_lights
+
+
+#####
+### Turn off Garage Exterior Lights at 01:03AM, if it's on
+### First try
+#####
+- alias: 'Garage Exterior Lights Off'
+  trigger:
+    platform: time
+    after: '01:03'
+  condition:
+      condition: state
+      entity_id: switch.garage_exterior_lights
+      state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_garage_exterior_lights

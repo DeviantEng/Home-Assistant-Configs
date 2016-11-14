@@ -65,3 +65,5 @@ switch.lamp_tvroom_switch_22_0:
 switch.lamp_fishtank_switch_24_0:
   friendly_name: 'Fish Tank'
   icon: mdi:lamp
+switch.garage_exterior_lights:
+  icon: mdi:lightbulb

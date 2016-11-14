@@ -13,6 +13,7 @@
 
 #####
 ### Sets the hvac_target_temp input_slider when the thermostat temperature is manually changed
+### CURRENTLY NOT WORKING!
 #####
 - alias: 'Set input_slider based on thermostat temperature'
   trigger:

@@ -1,9 +1,15 @@
-#- platform: template
-#  switches:
-#    baby_bedtime:
-#      friendly_name: 'Baby Bedtime'
-#      value_template: 
-#      turn_on:
-#        service: shell_command.sonos_fav_babylullayradio
-#      turn_off:
-#        service: shell_command.sonos_masterbedroomoff
+- platform: template
+  switches:
+    garage_exterior_lights:
+      friendly_name: 'Outside Lights'
+      value_template: '{{ is_state("light.bulb_garage_right_level_29_0", "on") }}'
+      turn_on:
+        - service: light.turn_on
+          entity_id: light.bulb_garage_right_level_29_0
+        - service: light.turn_on
+          entity_id: light.bulb_garage_left_level_30_0
+      turn_off:
+        - service: light.turn_off
+          entity_id: light.bulb_garage_right_level_29_0
+        - service: light.turn_off
+          entity_id: light.bulb_garage_left_level_30_0
