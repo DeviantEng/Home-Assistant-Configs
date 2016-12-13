@@ -1,0 +1,5 @@
+- trents:
+  name: "Trent's House"
+  latitude: !secret trents_lat
+  longitude: !secret trents_lon
+  radius: 100

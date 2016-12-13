@@ -1,0 +1,23 @@
+#####
+### Scene yaml example
+#####
+#- name: LivingRoomLamp10
+#  entities:
+#    light.livingroom_lamp_level_3_0:
+#      state: on
+#      brightness: 250
+
+#####
+### Automation yaml example
+#####
+#- alias: 'Living Room Test'
+#  trigger:
+#    platform: time
+#    after: '23:07:00'
+#  condition:
+#    condition: state
+#    entity_id: light.livingroom_lamp_level_3_0
+#    state: 'off'
+#  action:
+#    service: scene.turn_on
+#    entity_id: scene.LivingRoomLamp10

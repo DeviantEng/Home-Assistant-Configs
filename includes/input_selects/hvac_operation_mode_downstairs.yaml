@@ -1,0 +1,12 @@
+#####
+### hvac_operation_mode input_select used in downstairs thermostat-related automation rules to set the thermostat operation_mode based on input from this select
+#####
+hvac_operation_mode_downstairs:
+  name: 'Operating Mode'
+  options:
+    - 'Auto'
+    - 'Cool'
+    - 'Heat'
+    - 'Off'
+  initial: 'Off'
+  icon: mdi:settings

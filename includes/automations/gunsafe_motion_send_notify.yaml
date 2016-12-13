@@ -17,7 +17,7 @@
 - alias: 'Ammo Safe door-open Notify'
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_ammosafe_sensor_26_0
+      entity_id: binary_sensor.door_ammosafe_sensor_33_0
       state: 'on'
   action:
     service: notify.pushover

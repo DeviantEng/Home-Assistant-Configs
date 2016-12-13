@@ -1,0 +1,9 @@
+#####
+### hvac_target_temp input_slider used in downstairs thermostat-related automation rules to set the thermostat temperature based on input from this slider
+#####
+hvac_target_temp_downstairs:
+  name: 'Set Target Temp'
+  min: 60
+  max: 80
+  step: 1
+#  initial: 70

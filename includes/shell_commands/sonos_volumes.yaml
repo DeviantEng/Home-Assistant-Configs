@@ -1,4 +1,4 @@
-sonos_volume_8: '/usr/bin/curl -X GET http://172.16.1.128:5005/TV%20Room/volume/8'
-sonos_volume_18: '/usr/bin/curl -X GET http://172.16.1.128:5005/TV%20Room/volume/18'
-sonos_volume_low: '/usr/bin/curl -X GET http://172.16.1.128:5005/TV%20Room/volume/30'
-sonos_volume_high: '/usr/bin/curl -X GET http://172.16.1.128:5005/TV%20Room/volume/50'
+sonos_volume_8: '/usr/bin/curl -X GET http://172.16.1.178:5005/TV%20Room/volume/8'
+sonos_volume_18: '/usr/bin/curl -X GET http://172.16.1.178:5005/TV%20Room/volume/18'
+sonos_volume_low: '/usr/bin/curl -X GET http://172.16.1.178:5005/TV%20Room/volume/30'
+sonos_volume_high: '/usr/bin/curl -X GET http://172.16.1.178:5005/TV%20Room/volume/50'

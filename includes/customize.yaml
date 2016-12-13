@@ -1,8 +1,3 @@
-climate.thermostat_downstairs_cooling_1_2_2:
-  friendly_name: 'Settings'
-  icon: mdi:air-conditioner
-climate.thermostat_downstairs_heating_1_2_2:
-  friendly_name: 'Downstairs - DUPLICATE'
 binary_sensor.multisensor_gunsafe_sensor_23_0:
   polling_intensity: 1
 light.light_kitchen_level_21_0:
@@ -12,8 +7,11 @@ sensor.thermostat_downstairs_relative_humidity_2_5_3:
   icon: mdi:water-percent
 sensor.thermostat_downstairs_temperature_2_1:
   friendly_name: 'Temperature'
-sensor.thermostat_downstairs_temperature_2_1_2:
-  friendly_name: 'Downstairs - DUPLICATE'
+sensor.thermostat_upstairs_relative_humidity_31_5_3:
+  friendly_name: 'Humidity'
+  icon: mdi:water-percent
+sensor.thermostat_upstairs_temperature_31_1:
+  friendly_name: 'Temperature'
 lock.deadbolt_kitchen_locked_9_0:
   friendly_name: 'Door Lock'
 sensor.multisensor_kitchen_temperature_8_1:
@@ -40,9 +38,13 @@ sensor.front_door_status:
   icon: mdi:glassdoor
 sensor.climate_downstairs_temperature:
   icon: mdi:thermometer-lines
+sensor.climate_upstairs_temperature:
+  icon: mdi:thermometer-lines
 switch.baby_bedtime:
   icon: mdi:music-circle
 sensor.climate_downstairs_batterylevel:
+  icon: mdi:battery
+sensor.climate_upstairs_batterylevel:
   icon: mdi:battery
 sensor.lock_deadbolt_kitchen_batterylevel:
   icon: mdi:battery
@@ -56,14 +58,22 @@ sensor.door_ammosafe_batterylevel:
   icon: mdi:battery
 sensor.multisensor_tvroom_batterylevel:
   icon: mdi:battery
+sensor.tilt_garagedoor_batterylevel:
+  icon: mdi:battery
 switch.lamp_diningroom_switch_20_0:
   friendly_name: 'Lamp'
   icon: mdi:lamp
 switch.lamp_tvroom_switch_22_0:
   friendly_name: 'Lamp'
   icon: mdi:lamp
-switch.lamp_fishtank_switch_24_0:
-  friendly_name: 'Fish Tank'
-  icon: mdi:lamp
+switch.lamp_christmastree_switch_24_0:
+  friendly_name: 'Christmas Tree'
+  icon: mdi:pine-tree
 switch.garage_exterior_lights:
   icon: mdi:lightbulb
+switch.upstairs_lamp:
+  friendly_name: 'Lamp'
+  icon: mdi:lamp
+switch.office_lamp:
+  friendly_name: 'Lamp'
+  icon: mdi:lamp

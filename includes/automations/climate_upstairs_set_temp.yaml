@@ -1,0 +1,38 @@
+#####
+### Sets the upstairs thermostat temperature when the hvac_target_temp input_slider is changed
+#####
+- alias: 'Set upstairs thermostat temperature based on input_slider'
+  trigger:
+    - platform: state
+      entity_id: input_slider.hvac_target_temp_upstairs
+  action:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: >-
+          {% if is_state('input_select.hvac_operation_mode_upstairs', 'Heat') %}
+              climate.thermostat_upstairs_heating_1_31_1
+          {% elif is_state('input_select.hvac_operation_mode_upstairs', 'Cool') %}
+              climate.thermostat_upstairs_cooling_1_31_2
+          {% endif %}
+        temperature: "{{ states('input_slider.hvac_target_temp_upstairs') }}"
+
+#####
+### Sets the hvac_target_temp input_slider when the upstairs thermostat temperature is manually changed
+#####
+- alias: 'Set input_slider based on upstairsthermostat temperature'
+  trigger:
+    platform: state
+    entity_id: climate.thermostat_upstairs_cooling_1_31_2
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.temperature != trigger.from_state.attributes.temperature }}'
+  action:
+    service: input_slider.select_value
+    entity_id: input_slider.hvac_target_temp_upstairs
+    value_template:
+      entity_id: >-
+        {% if is_state('input_select.hvac_operation_mode_upstairs', 'Heat') %}
+            '{{ states.climate.thermostat_upstairs_heating_1_31_1.attributes.temperature }}'
+        {% elif is_state('input_select.hvac_operation_mode_upstairs', 'Cool') %}
+            '{{ states.climate.thermostat_upstairs_cooling_1_31_2.attributes.temperature }}'
+        {% endif %}

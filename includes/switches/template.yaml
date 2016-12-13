@@ -13,3 +13,23 @@
           entity_id: light.bulb_garage_right_level_29_0
         - service: light.turn_off
           entity_id: light.bulb_garage_left_level_30_0
+
+    upstairs_lamp:
+      friendly_name: 'Lamp'
+      value_template: '{{ is_state("light.bulb_upstairs_level_36_0", "on") }}'
+      turn_on:
+        service: light.turn_on
+        entity_id: light.bulb_upstairs_level_36_0
+      turn_off:
+        service: light.turn_off
+        entity_id: light.bulb_upstairs_level_36_0
+
+    office_lamp:
+      friendly_name: 'Lamp'
+      value_template: '{{ is_state("light.bulb_office_level_37_0", "on") }}'
+      turn_on:
+        service: light.turn_on
+        entity_id: light.bulb_office_level_37_0
+      turn_off:
+        service: light.turn_off
+        entity_id: light.bulb_office_level_37_0

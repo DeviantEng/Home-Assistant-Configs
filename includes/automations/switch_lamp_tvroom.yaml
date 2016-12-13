@@ -19,7 +19,7 @@
 ### Turn off TV Room lamp at 12:14AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
 ### First try
 #####
-- alias: 'TV Room Lamp Off'
+- alias: 'TV Room Lamp Off (first try)'
   trigger:
     platform: time
     after: '00:14'
@@ -41,10 +41,35 @@
     entity_id: switch.lamp_tvroom_switch_22_0
 
 #####
-### Turn off TV Room lamp at 01:14AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
-### Second try in case the lamp doesn't get turned off during the first try
+### Turn off TV Room lamp at 12:44AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
+### Second try in case the lamp doesn't get turned off during the previous try
 #####
 - alias: 'TV Room Lamp Off (second try)'
+  trigger:
+    platform: time
+    after: '00:44'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.multisensor_tvroom_sensor_28_0
+        state: 'off'
+        for:
+          hours: 0
+          minutes: 5
+          seconds: 0
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_tvroom_switch_22_0
+
+#####
+### Turn off TV Room lamp at 01:14AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
+### Third try in case the lamp doesn't get turned off during the previous try
+#####
+- alias: 'TV Room Lamp Off (third try)'
   trigger:
     platform: time
     after: '01:14'
@@ -61,6 +86,21 @@
           hours: 0
           minutes: 5
           seconds: 0
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_tvroom_switch_22_0
+
+#####
+### Turn off TV Room lamp at 01:44AM, if it's on and no motion has been detected in the TV Room 5 minutes prior
+#####
+- alias: 'TV Room Lamp Off (final)'
+  trigger:
+    platform: time
+    after: '01:44'
+  condition:
+    condition: state
+    entity_id: switch.lamp_tvroom_switch_22_0
+    state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: switch.lamp_tvroom_switch_22_0

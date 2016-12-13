@@ -1,0 +1,29 @@
+#####
+### Turn on Christmas Tree at 04:45PM, if it's off
+#####
+- alias: 'Christmas Tree On'
+  trigger:
+    platform: time
+    after: '16:45'
+  condition:
+    condition: state
+    entity_id: switch.lamp_christmastree_switch_24_0
+    state: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.lamp_christmastree_switch_24_0
+
+#####
+### Turn off Christmas Tree at 11:45PM, if it's on
+#####
+- alias: 'Christmas Tree Off'
+  trigger:
+    platform: time
+    after: '23:45'
+  condition:
+    condition: state
+    entity_id: switch.lamp_christmastree_switch_24_0
+    state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_christmastree_switch_24_0

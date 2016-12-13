@@ -1,5 +1,5 @@
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
 
-default: error
-logs:
-  homeassistant.components.automation: debug
+default: warning
+#logs:
+#  homeassistant.components.zwave: info

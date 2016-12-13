@@ -8,9 +8,9 @@ hvac:
 hvac_downstairs:
   name: 'Downstairs'
   entities:
-    - input_select.hvac_operation_mode
-    - input_select.hvac_fan_mode
-    - input_slider.hvac_target_temp
+    - input_select.hvac_operation_mode_downstairs
+    - input_select.hvac_fan_mode_downstairs
+    - input_slider.hvac_target_temp_downstairs
     - sensor.climate_downstairs_temperature
     - sensor.thermostat_downstairs_temperature_2_1
     - sensor.thermostat_downstairs_relative_humidity_2_5_3
@@ -18,3 +18,9 @@ hvac_downstairs:
 hvac_upstairs:
   name: 'Upstairs'
   entities:
+    - input_select.hvac_operation_mode_upstairs
+    - input_select.hvac_fan_mode_upstairs
+    - input_slider.hvac_target_temp_upstairs
+    - sensor.climate_upstairs_temperature
+    - sensor.thermostat_upstairs_temperature_31_1
+    - sensor.thermostat_upstairs_relative_humidity_31_5_3

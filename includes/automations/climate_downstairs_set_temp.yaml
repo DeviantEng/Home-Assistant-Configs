@@ -1,21 +1,25 @@
 #####
-### Sets the thermostat temperature when the hvac_target_temp input_slider is changed
+### Sets the downstairs thermostat temperature when the hvac_target_temp input_slider is changed
 #####
-- alias: 'Set thermostat temperature based on input_slider'
+- alias: 'Set downstairs thermostat temperature based on input_slider'
   trigger:
-    platform: state
-    entity_id: input_slider.hvac_target_temp
+    - platform: state
+      entity_id: input_slider.hvac_target_temp_downstairs
   action:
-    service: climate.set_temperature
-    entity_id: climate.thermostat_downstairs_cooling_1_2_2
-    data_template:
-      temperature: "{{ states('input_slider.hvac_target_temp') }}"
+    - service: climate.set_temperature
+      data_template:
+        entity_id: >-
+          {% if is_state('input_select.hvac_operation_mode_downstairs', 'Heat') %}
+              climate.thermostat_downstairs_heating_1_2_1
+          {% elif is_state('input_select.hvac_operation_mode_downstairs', 'Cool') %}
+              climate.thermostat_downstairs_cooling_1_2_2
+          {% endif %}
+        temperature: "{{ states('input_slider.hvac_target_temp_downstairs') }}"
 
 #####
-### Sets the hvac_target_temp input_slider when the thermostat temperature is manually changed
-### CURRENTLY NOT WORKING!
+### Sets the hvac_target_temp input_slider when the downstairs thermostat temperature is manually changed
 #####
-- alias: 'Set input_slider based on thermostat temperature'
+- alias: 'Set input_slider based on downstairsthermostat temperature'
   trigger:
     platform: state
     entity_id: climate.thermostat_downstairs_cooling_1_2_2
@@ -24,6 +28,11 @@
     value_template: '{{ trigger.to_state.attributes.temperature != trigger.from_state.attributes.temperature }}'
   action:
     service: input_slider.select_value
-    entity_id: input_slider.hvac_target_temp
-    data_template:
-      value: '{{ states.climate.thermostat_downstairs_cooling_1_2_2.attributes.temperature }}' 
+    entity_id: input_slider.hvac_target_temp_downstairs
+    value_template:
+      entity_id: >-
+        {% if is_state('input_select.hvac_operation_mode_downstairs', 'Heat') %}
+            '{{ states.climate.thermostat_upstairs_heating_1_2_1.attributes.temperature }}'
+        {% elif is_state('input_select.hvac_operation_mode_downstairs', 'Cool') %}
+            '{{ states.climate.thermostat_downstairs_cooling_1_2_2.attributes.temperature }}'
+        {% endif %}

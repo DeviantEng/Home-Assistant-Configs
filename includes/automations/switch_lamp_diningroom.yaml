@@ -18,7 +18,7 @@
 ### Turn off Dining Room lamp at 12:15AM, if it's on and the TV Room lamp is off
 ### First try
 #####
-- alias: 'Dining Room Lamp Off'
+- alias: 'Dining Room Lamp Off (first try)'
   trigger:
     platform: time
     after: '00:15'
@@ -36,10 +36,31 @@
     entity_id: switch.lamp_diningroom_switch_20_0
 
 #####
-### Turn off Dining Room lamp at 01:14AM, if it's on and the TV Room lamp is off
-### Second try in case the lamp doesn't get turned off during the first try
+### Turn off Dining Room lamp at 12:45AM, if it's on and the TV Room lamp is off
+### Second try in case the lamp doesn't get turned off during the previous try
 #####
 - alias: 'Dining Room Lamp Off (second try)'
+  trigger:
+    platform: time
+    after: '00:45'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: switch.lamp_diningroom_switch_20_0
+        state: 'on'
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_diningroom_switch_20_0
+
+#####
+### Turn off Dining Room lamp at 01:15AM, if it's on and the TV Room lamp is off
+### Third try in case the lamp doesn't get turned off during the previous try
+#####
+- alias: 'Dining Room Lamp Off (third try)'
   trigger:
     platform: time
     after: '01:15'
@@ -52,6 +73,21 @@
       - condition: state
         entity_id: switch.lamp_tvroom_switch_22_0
         state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_diningroom_switch_20_0
+
+#####
+### Turn off Dining Room lamp at 01:45AM, if it's on and the TV Room lamp is off
+#####
+- alias: 'Dining Room Lamp Off (final)'
+  trigger:
+    platform: time
+    after: '01:45'
+  condition:
+    condition: state
+    entity_id: switch.lamp_diningroom_switch_20_0
+    state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: switch.lamp_diningroom_switch_20_0

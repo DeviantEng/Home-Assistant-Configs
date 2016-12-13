@@ -1,0 +1,28 @@
+#####
+### Sets the upstairs thermostat operation_mode when the hvac_operation_mode input_select is changed
+#####
+- alias: 'Set upstairs thermostat operation_mode based on input_select'
+  trigger:
+    platform: state
+    entity_id: input_select.hvac_operation_mode_upstairs
+  action:
+    service: climate.set_operation_mode
+    entity_id: climate.thermostat_upstairs_cooling_1_31_2
+    data_template:
+      operation_mode: "{{ states('input_select.hvac_operation_mode_upstairs') }}"
+
+#####
+### Sets the hvac_operation_mode input_select when the upstairsthermostat operation_mode is manually changed
+#####
+- alias: 'Set input_select based on upstairs thermostat operation_mode'
+  trigger:
+    platform: state
+    entity_id: climate.thermostat_upstairs_cooling_1_31_2
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.operation_mode != trigger.from_state.attributes.operation_mode }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.hvac_operation_mode_upstairs
+    data_template:
+      option: '{{ states.climate.thermostat_upstairs_cooling_1_31_2.attributes.operation_mode }}'

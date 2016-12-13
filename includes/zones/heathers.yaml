@@ -1,0 +1,5 @@
+- heathers:
+  name: "Heather's House"
+  latitude: !secret heathers_lat
+  longitude: !secret heathers_lon
+  radius: 100

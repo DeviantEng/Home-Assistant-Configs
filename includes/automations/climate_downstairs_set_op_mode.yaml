@@ -1,20 +1,20 @@
 #####
-### Sets the thermostat operation_mode when the hvac_operation_mode input_select is changed
+### Sets the downstairs thermostat operation_mode when the hvac_operation_mode input_select is changed
 #####
-- alias: 'Set thermostat operation_mode based on input_select'
+- alias: 'Set downstairs thermostat operation_mode based on input_select'
   trigger:
     platform: state
-    entity_id: input_select.hvac_operation_mode
+    entity_id: input_select.hvac_operation_mode_downstairs
   action:
     service: climate.set_operation_mode
     entity_id: climate.thermostat_downstairs_cooling_1_2_2
     data_template:
-      operation_mode: "{{ states('input_select.hvac_operation_mode') }}"
+      operation_mode: "{{ states('input_select.hvac_operation_mode_downstairs') }}"
 
 #####
-### Sets the hvac_operation_mode input_select when the thermostat operation_mode is manually changed
+### Sets the hvac_operation_mode input_select when the downstairsthermostat operation_mode is manually changed
 #####
-- alias: 'Set input_select based on thermostat operation_mode'
+- alias: 'Set input_select based on downstairs thermostat operation_mode'
   trigger:
     platform: state
     entity_id: climate.thermostat_downstairs_cooling_1_2_2
@@ -23,6 +23,6 @@
     value_template: '{{ trigger.to_state.attributes.operation_mode != trigger.from_state.attributes.operation_mode }}'
   action:
     service: input_select.select_option
-    entity_id: input_select.hvac_operation_mode
+    entity_id: input_select.hvac_operation_mode_downstairs
     data_template:
       option: '{{ states.climate.thermostat_downstairs_cooling_1_2_2.attributes.operation_mode }}'

@@ -13,15 +13,17 @@ history:
 logbook:
 updater:
   reporting: no
-recorder:
-  purge_days: 3
 
 
 http: !include includes/http.yaml
 
 logger: !include includes/logger.yaml
 
+mqtt: !include includes/mqtt.yaml
+
 notify: !include includes/notify.yaml
+
+recorder: !include includes/recorder.yaml
 
 sun: !include includes/sun.yaml
 
@@ -39,6 +41,8 @@ group: !include_dir_merge_named includes/groups
 input_select: !include_dir_merge_named includes/input_selects
 
 input_slider: !include_dir_merge_named includes/input_sliders
+
+scene: !include_dir_merge_named includes/scenes
 
 script: !include_dir_merge_named includes/scripts
 

@@ -6,6 +6,8 @@ rooms:
     - group.dining_room
     - group.living_room
     - group.tv_room
+    - group.upstairs
+    - group.office
     - group.garage
 
 kitchen:
@@ -27,19 +29,30 @@ living_room:
   name: 'Living Room'
   entities:
     - sensor.front_door_status
-    - switch.lamp_fishtank_switch_24_0
+    - switch.lamp_christmastree_switch_24_0
 
 tv_room:
   name: 'TV Room'
   entities:
     - switch.lamp_tvroom_switch_22_0
     - sensor.tvroom_motion
-    - sensor.ammosafe_door_status
     - sensor.gunsafe_motion
+    - sensor.ammosafe_door_status
     - sensor.multisensor_gunsafe_temperature_23_1
     - sensor.multisensor_gunsafe_relative_humidity_23_5
+
+upstairs:
+  name: 'Upstairs'
+  entities:
+    - switch.upstairs_lamp
+
+office:
+  name: 'Office'
+  entities:
+    - switch.office_lamp
 
 garage:
   name: 'Garage'
   entities:
     - switch.garage_exterior_lights
+    - sensor.garage_door_status

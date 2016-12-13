@@ -1,8 +1,8 @@
-- platform: unifi
-  host: !secret unifihost
-  port: !secret unifiport
-  username: !secret unifiuser
-  password: !secret unifipass
-  track_new_devices: false
-  interval_seconds: 30
-  consider_home: 120
+#- platform: unifi
+#  host: !secret unifihost
+#  port: !secret unifiport
+#  username: !secret unifiuser
+#  password: !secret unifipass
+#  track_new_devices: false
+#  interval_seconds: 30
+#  consider_home: 120

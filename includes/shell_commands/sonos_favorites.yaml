@@ -1,4 +1,4 @@
-sonos_fav_babylullabyradio: '/usr/bin/curl +X POST http://172.16.1.128:5005/Master%20Bedroom/favorite/Baby%20Lullaby%20Radio'
-#sonos_fav_babylullabyradio: '/usr/bin/curl +X POST http://172.16.1.128:5005/{{ states.input_select.sonos_room.state }}/favorite/Baby%20Lullaby%20Radio'
-sonos_fav_sxmoctane: '/usr/bin/curl +X POST http://172.16.1.128:5005/TV%20Room/favorite/37%20-%20Octane'
-sonos_fav_sxmturbo: '/usr/bin/curl +X POST http://172.16.1.128:5005/TV%20Room/favorite/314%20-%20SiriusXM%20Turbo'
+sonos_fav_babylullabyradio: '/usr/bin/curl +X POST http://172.16.1.178:5005/Master%20Bedroom/favorite/Baby%20Lullaby%20Radio'
+#sonos_fav_babylullabyradio: '/usr/bin/curl +X POST http://172.16.1.178:5005/{{ states.input_select.sonos_room.state }}/favorite/Baby%20Lullaby%20Radio'
+sonos_fav_sxmoctane: '/usr/bin/curl +X POST http://172.16.1.178:5005/TV%20Room/favorite/37%20-%20Octane'
+sonos_fav_sxmturbo: '/usr/bin/curl +X POST http://172.16.1.178:5005/TV%20Room/favorite/314%20-%20SiriusXM%20Turbo'

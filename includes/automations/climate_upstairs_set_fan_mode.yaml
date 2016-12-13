@@ -1,0 +1,38 @@
+#####
+### Sets the upstairs thermostat fan_mode when the hvac_fan_mode input_select is changed
+#####
+- alias: 'Set upstairs thermostat fan_mode based on input_select'
+  trigger:
+    platform: state
+    entity_id: input_select.hvac_fan_mode_upstairs
+  action:
+    service: climate.set_fan_mode
+    entity_id: climate.thermostat_upstairs_cooling_1_31_2
+    data_template:
+      fan_mode: >-
+          {%- if is_state('input_select.hvac_fan_mode_upstairs', 'Auto') -%}
+              Auto Low
+          {%- elif is_state('input_select.hvac_fan_mode_upstairs', 'On') -%}
+              On Low
+          {%- endif -%}
+
+#####
+### Sets the hvac_fan_mode input_select when the upstairs thermostat fan_mode is manually changed
+#####
+- alias: 'Set input_select based on upstairs thermostat fan_mode'
+  trigger:
+    platform: state
+    entity_id: climate.thermostat_upstairs_cooling_1_31_2
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.fan_mode != trigger.from_state.attributes.fan_mode }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.hvac_fan_mode_upstairs
+    data_template:
+      option: >-
+          {%- if is_state_attr('climate.thermostat_upstairs_cooling_1_31_2', 'fan_mode', 'Auto Low') -%}
+              Auto
+          {%- elif is_state_attr('climate.thermostat_upstairs_cooling_1_31_2', 'fan_mode', 'On Low') -%}
+              On
+          {%- endif -%}

@@ -1,0 +1,31 @@
+#####
+### Turn on Upstairs Lamp 30 minutes before sunset, if it's off
+#####
+- alias: 'Upstairs Lamp On'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  condition:
+    condition: state
+    entity_id: light.bulb_upstairs_level_36_0
+    state: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.bulb_upstairs_level_36_0
+
+
+#####
+### Turn off Upstairs Lamp at 11:30PM, if it's on
+#####
+- alias: 'Upstairs Lamp Off'
+  trigger:
+    platform: time
+    after: '23:30'
+  condition:
+      condition: state
+      entity_id: light.bulb_upstairs_level_36_0
+      state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.bulb_upstairs_level_36_0

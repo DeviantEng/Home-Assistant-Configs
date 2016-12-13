@@ -1,0 +1,10 @@
+#####
+### hvac_fan_mode input_select used in upstairs thermostat-related automation rules to set the thermostat fan_mode based on input from this select
+#####
+hvac_fan_mode_upstairs:
+  name: 'Fan Mode'
+  options:
+    - 'Auto'
+    - 'On'
+  initial: Auto
+  icon: mdi:fan
