@@ -16,4 +16,5 @@ home:
 scenes:
   name: 'Scenes'
   entities:
+    - scene.bedtime
     - switch.baby_bedtime

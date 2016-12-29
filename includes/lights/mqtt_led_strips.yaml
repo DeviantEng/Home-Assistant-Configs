@@ -1,0 +1,9 @@
+- platform: mqtt
+  name: led_strip_office
+  command_topic: "ledstrip/office/setpower"
+  state_topic: "ledstrip/office/setpowerpub"
+  rgb_command_topic: "ledstrip/office/setcolor"
+  rgb_state_topic: "ledstrip/office/setcolorpub"
+  brightness_command_topic: "ledstrip/office/setbrightness"
+  brightness_state_topic: "ledstrip/office/setbrightnesspub"
+  optimistic: false

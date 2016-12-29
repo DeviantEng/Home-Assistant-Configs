@@ -38,11 +38,13 @@ device_tracker: !include_dir_merge_list includes/device_trackers
 
 group: !include_dir_merge_named includes/groups
 
+light: !include_dir_merge_list includes/lights
+
 input_select: !include_dir_merge_named includes/input_selects
 
 input_slider: !include_dir_merge_named includes/input_sliders
 
-scene: !include_dir_merge_named includes/scenes
+scene: !include_dir_merge_list includes/scenes
 
 script: !include_dir_merge_named includes/scripts
 

@@ -1,0 +1,6 @@
+led_strip_speed_office:
+  name: 'Animation Speed'
+  initial: 70
+  min: 10 
+  max: 150
+  step: 10

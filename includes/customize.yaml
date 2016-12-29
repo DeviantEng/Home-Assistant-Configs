@@ -58,6 +58,8 @@ sensor.door_ammosafe_batterylevel:
   icon: mdi:battery
 sensor.multisensor_tvroom_batterylevel:
   icon: mdi:battery
+sensor.multisensor_office_batterylevel:
+  icon: mdi:battery
 sensor.tilt_garagedoor_batterylevel:
   icon: mdi:battery
 switch.lamp_diningroom_switch_20_0:
@@ -66,9 +68,9 @@ switch.lamp_diningroom_switch_20_0:
 switch.lamp_tvroom_switch_22_0:
   friendly_name: 'Lamp'
   icon: mdi:lamp
-switch.lamp_christmastree_switch_24_0:
-  friendly_name: 'Christmas Tree'
-  icon: mdi:pine-tree
+switch.lamp_fishtank_switch_24_0:
+  friendly_name: 'Fish Tank'
+  icon: mdi:fish
 switch.garage_exterior_lights:
   icon: mdi:lightbulb
 switch.upstairs_lamp:
@@ -77,3 +79,11 @@ switch.upstairs_lamp:
 switch.office_lamp:
   friendly_name: 'Lamp'
   icon: mdi:lamp
+scene.bedtime:
+  icon: mdi:hotel
+light.led_strip_office:
+  friendly_name: 'LED Strip'
+input_select.led_strip_effect_office:
+  icon: mdi:view-list
+input_slider.led_strip_speed_office:
+  icon: mdi:speedometer

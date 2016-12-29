@@ -33,3 +33,13 @@
       turn_off:
         service: light.turn_off
         entity_id: light.bulb_office_level_37_0
+    
+    scene_bedtime:
+      friendly_name: 'Scene Bedtime Switch'
+      value_template: ' {{ is_state("light.bulb_office_level_37_0", "off") }}'
+      turn_on:
+        service: scene.turn_on
+        entity_id: scene.bedtime
+      turn_off:
+        service: light.turn_off
+        entity_id: light.bulb_office_level_37_0

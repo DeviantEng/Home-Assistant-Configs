@@ -1,0 +1,24 @@
+#####
+### Turn on Office Lamp if motion is detected and it's 1 hour before sunset, but no later than 1 hour after sunrise
+#####
+- alias: 'Office Lamp On'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.multisensor_office_sensor_38_0
+    to: 'on'
+#  condition:
+#    condition: sun
+#    after: sunset
+#    after_offset: '-01:00:00'
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+        after_offset: '-01:30:00'
+      - condition: sun
+        before: sunrise
+        before_offset: '+01:30:00'
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.timer_office_lamp_on

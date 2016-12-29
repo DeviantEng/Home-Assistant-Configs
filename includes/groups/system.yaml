@@ -12,6 +12,7 @@ batterylevels:
     - sensor.lock_deadbolt_kitchen_batterylevel
     - sensor.multisensor_kitchen_batterylevel
     - sensor.multisensor_tvroom_batterylevel
+    - sensor.multisensor_office_batterylevel
     - sensor.door_kitchen_batterylevel
     - sensor.door_front_batterylevel
     - sensor.door_ammosafe_batterylevel

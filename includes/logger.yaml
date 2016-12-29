@@ -2,4 +2,4 @@
 
 default: warning
 #logs:
-#  homeassistant.components.zwave: info
+#  homeassistant.components.switch: info

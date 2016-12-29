@@ -1,0 +1,23 @@
+- alias: 'Office LED Strip Input Effect'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_select.led_strip_effect_office
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: 'ledstrip/office/seteffect'
+        payload: '{{ trigger.to_state.state | string }}'
+
+- alias: 'Office LED Strip Animation Speed'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_slider.led_strip_speed_office
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: 'ledstrip/office/setanimationspeed'
+        payload: '{{ trigger.to_state.state | int }}'

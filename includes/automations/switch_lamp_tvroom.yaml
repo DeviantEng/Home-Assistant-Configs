@@ -5,7 +5,7 @@
   trigger:
     platform: sun
     event: sunset
-    offset: '-00:30:00'
+    offset: '-00:45:00'
   condition:
     condition: state
     entity_id: switch.lamp_tvroom_switch_22_0

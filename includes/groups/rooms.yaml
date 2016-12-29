@@ -29,7 +29,7 @@ living_room:
   name: 'Living Room'
   entities:
     - sensor.front_door_status
-    - switch.lamp_christmastree_switch_24_0
+    - switch.lamp_fishtank_switch_24_0
 
 tv_room:
   name: 'TV Room'
@@ -50,6 +50,10 @@ office:
   name: 'Office'
   entities:
     - switch.office_lamp
+    - sensor.office_motion
+    - light.led_strip_office
+    - input_select.led_strip_effect_office
+    - input_slider.led_strip_speed_office
 
 garage:
   name: 'Garage'
