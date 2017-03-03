@@ -4,7 +4,7 @@ As a service to the Home Assistant (hass) community, I want to share my configur
 
 **SCREENSHOTS CURRENT AS OF 03/03/2017**
 
-![HOME page](/screenshots/tab1.png?raw=true "Page 1")
-![ROOMS page](/screenshots/tab2.png?raw=true "Page 2")
-![HVAC page](/screenshots/tab3.png?raw=true "Page 3")
-![SYSTEM page](/screenshots/tab4.png?raw=true "Page 4")
+![HOME page](/screenshots/tab1-v3.png?raw=true "Tab 1")
+![ROOMS page](/screenshots/tab2-v3.png?raw=true "Tab 2")
+![HVAC page](/screenshots/tab3-v3.png?raw=true "Tab 3")
+![SYSTEM page](/screenshots/tab4-v3.png?raw=true "Tab 4")
