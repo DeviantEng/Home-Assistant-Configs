@@ -1,0 +1,3 @@
+gateways:
+  - sid: !secret xiaomi_sid_1
+    key: !secret xiaomi_key_1

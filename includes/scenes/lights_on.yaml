@@ -1,0 +1,14 @@
+#####
+### Scene to turn on all light
+#####
+- name: Lights On
+  entities:
+    light.bulb_office_level_37_0: on
+    light.led_strip_office: on
+    light.bulb_livingroom_level_36_0: on
+    switch.lamp_tvroom_switch_22_0: on
+    switch.lamp_diningroom_switch_20_0: on
+    switch.lamp_upstairs_switch_39_0: on
+    switch.lamp_fishtank_switch_24_0: on
+    switch.garage_exterior_lights: on
+    light.light_kitchen_level_21_0: on

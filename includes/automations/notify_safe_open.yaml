@@ -23,3 +23,16 @@
     service: notify.pushover
     data_template:
       message: "Somebody opened your ammo safe; AAAHHHH!!!"
+
+#####
+### Send notification anytime door is opened on officesafe
+#####
+- alias: 'Office Safe door-open Notify'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_officesafe_sensor_41_0
+      state: 'on'
+  action:
+    service: notify.pushover
+    data_template:
+      message: "Somebody opened your office safe; AAAHHHH!!!"

@@ -1,0 +1,26 @@
+#####
+### Turn on officesafe light when door is open
+#####
+- alias: 'Officesafe Light On'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_officesafe_sensor_41_0
+    from: 'off'
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.powerstrip_office_switch_40_0_4
+
+
+#####
+### Turn off Dining Room lamp at 01:45AM, if it's on and the TV Room lamp is off
+#####
+- alias: 'Dining Room Lamp Off (final)'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_officesafe_sensor_41_0
+    from: 'on'
+    to: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.powerstrip_office_switch_40_0_4

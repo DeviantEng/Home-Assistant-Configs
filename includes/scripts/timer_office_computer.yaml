@@ -1,0 +1,6 @@
+timer_office_computer_on:
+  alias: 'Turn on Computer (uvmon) after delay'
+  sequence:
+    - delay: '00:00:15'
+    - service: switch.turn_on
+      entity_id: switch.powerstrip_office_switch_40_0_5

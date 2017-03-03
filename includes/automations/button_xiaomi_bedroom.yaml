@@ -1,0 +1,32 @@
+- alias: 'Bedtime Scene'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001268273
+      click_type: single
+  action:
+    service: script.turn_on
+    entity_id: script.button_bedroom_single
+
+- alias: 'Toggle Bedroom Lamp'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001268273
+      click_type: double
+  action:
+    service: switch.toggle
+    entity_id: switch.lamp_masterbedroom_switch_24_0
+
+- alias: 'Lights On Scene'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001268273
+      click_type: hold
+  action:
+    service: script.turn_on
+    entity_id: script.button_bedroom_hold

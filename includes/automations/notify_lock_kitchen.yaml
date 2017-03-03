@@ -10,10 +10,10 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.phone_derek_n6p
+        entity_id: device_tracker.phone_derek_pixelxl
         state: not_home
       - condition: state
-        entity_id: device_tracker.phone_andrea_iphone6
+        entity_id: device_tracker.phone_andrea_pixel
         state: not_home
   action:
     service: notify.pushover

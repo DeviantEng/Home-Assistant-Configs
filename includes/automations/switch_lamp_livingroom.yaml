@@ -1,0 +1,93 @@
+#####
+### Turn on Living Room lamp 45 minutes before sunset, if it's off
+#####
+- alias: 'Living Room Lamp On'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:45:00'
+  condition:
+    condition: state
+    entity_id: light.bulb_livingroom_level_36_0
+    state: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.bulb_livingroom_level_36_0
+
+#####
+### Turn off Living Room lamp at 12:15AM, if it's on and the TV Room lamp is off
+### First try
+#####
+- alias: 'Living Room Lamp Off (first try)'
+  trigger:
+    platform: time
+    after: '00:15'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: light.bulb_livingroom_level_36_0
+        state: 'on'
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.bulb_livingroom_level_36_0
+
+#####
+### Turn off Living Room lamp at 12:45AM, if it's on and the TV Room lamp is off
+### Second try in case the lamp doesn't get turned off during the previous try
+#####
+- alias: 'Living Room Lamp Off (second try)'
+  trigger:
+    platform: time
+    after: '00:45'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: light.bulb_livingroom_level_36_0
+        state: 'on'
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.bulb_livingroom_level_36_0
+
+#####
+### Turn off Living Room lamp at 01:15AM, if it's on and the TV Room lamp is off
+### Third try in case the lamp doesn't get turned off during the previous try
+#####
+- alias: 'Living Room Lamp Off (third try)'
+  trigger:
+    platform: time
+    after: '01:15'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: light.bulb_livingroom_level_36_0
+        state: 'on'
+      - condition: state
+        entity_id: switch.lamp_tvroom_switch_22_0
+        state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.bulb_livingroom_level_36_0
+
+#####
+### Turn off Living Room lamp at 01:45AM, if it's on and the TV Room lamp is off
+#####
+- alias: 'Living Room Lamp Off (final)'
+  trigger:
+    platform: time
+    after: '01:45'
+  condition:
+    condition: state
+    entity_id: light.bulb_livingroom_level_36_0
+    state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.bulb_livingroom_level_36_0

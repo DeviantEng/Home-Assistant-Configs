@@ -1,0 +1,11 @@
+#####
+### Turn on Monitor (uvmon) if motion is detected
+#####
+- alias: 'Monitor (uvmon) On'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.multisensor_office_sensor_38_0
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.timer_office_monitor_on

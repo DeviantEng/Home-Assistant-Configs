@@ -1,0 +1,11 @@
+#####
+### Turn on Computer (uvmon) , if it's off
+#####
+- alias: 'Computer (uvmon) on'
+  trigger:
+    platform: state
+    entity_id: switch.powerstrip_office_switch_40_0_5
+    to: 'off'
+  action:
+    service: script.turn_on
+    entity_id: script.timer_office_computer_on

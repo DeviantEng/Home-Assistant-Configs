@@ -1,0 +1,16 @@
+timer_office_monitor_on:
+  alias: 'Turn on Monitor (uvmon) and set timer'
+  sequence:
+    - service: script.turn_off
+      entity_id: script.timer_office_monitor_off
+    - service: switch.turn_on
+      entity_id: switch.powerstrip_office_switch_40_0_6
+    - service: script.turn_on
+      entity_id: script.timer_office_monitor_off
+
+timer_office_monitor_off:
+  alias: 'Turn off Monitor (uvmon) after delay'
+  sequence:
+    - delay: '00:30:00'
+    - service: switch.turn_off
+      entity_id: switch.powerstrip_office_switch_40_0_6
