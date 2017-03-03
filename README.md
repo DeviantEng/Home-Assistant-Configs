@@ -11,3 +11,7 @@ As a service to the Home Assistant (hass) community, I want to share my configur
 ![HVAC page](/screenshots/tab3-v3.png?raw=true "Tab 3")  
 
 ![SYSTEM page](/screenshots/tab4-v3.png?raw=true "Tab 4")  
+
+<kbd>
+  <img src="/screenshots/tab1-v3.png?raw=true">  
+</kbd>
