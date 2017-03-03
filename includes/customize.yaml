@@ -30,11 +30,13 @@ sensor.gunsafe_motion:
   icon: mdi:zip-box
 sensor.sun_state:
   icon: mdi:white-balance-sunny
-sensor.devplex:
+sensor.devlocal:
   icon: mdi:plex
 sensor.kitchen_door_status:
   icon: mdi:glassdoor
 sensor.front_door_status:
+  icon: mdi:glassdoor
+sensor.basement_door_status:
   icon: mdi:glassdoor
 sensor.climate_downstairs_temperature:
   icon: mdi:thermometer-lines
@@ -62,18 +64,26 @@ sensor.multisensor_office_batterylevel:
   icon: mdi:battery
 sensor.tilt_garagedoor_batterylevel:
   icon: mdi:battery
+sensor.door_officesafe_batterylevel:
+  icon: mdi:battery
 switch.lamp_diningroom_switch_20_0:
   friendly_name: 'Lamp'
   icon: mdi:lamp
 switch.lamp_tvroom_switch_22_0:
   friendly_name: 'Lamp'
   icon: mdi:lamp
-switch.lamp_fishtank_switch_24_0:
+switch.lamp_masterbedroom_switch_24_0:
+  friendly_name: 'Lamp'
+  icon: mdi:lamp
+switch.plug_158d00012774a1:
   friendly_name: 'Fish Tank'
   icon: mdi:fish
+switch.lamp_upstairs_switch_39_0:
+  friendly_name: 'Lamp'
+  icon: mdi:lamp
 switch.garage_exterior_lights:
   icon: mdi:lightbulb
-switch.upstairs_lamp:
+switch.livingroom_lamp:
   friendly_name: 'Lamp'
   icon: mdi:lamp
 switch.office_lamp:
@@ -87,3 +97,38 @@ input_select.led_strip_effect_office:
   icon: mdi:view-list
 input_slider.led_strip_speed_office:
   icon: mdi:speedometer
+switch.powerstrip_office_switch_40_0_2:
+  friendly_name: 'Plug 1'
+switch.powerstrip_office_switch_40_0_3:
+  friendly_name: 'Plug 2'
+switch.powerstrip_office_switch_40_0_4:
+  friendly_name: 'Officesafe Light'
+switch.powerstrip_office_switch_40_0_5:
+  friendly_name: 'Computer (uv-mon)'
+switch.powerstrip_office_switch_40_0_6:
+  friendly_name: 'Monitor (uv-mon)'
+sensor.temperature_158d00010e5010:
+  friendly_name: 'Temperature'
+  icon: mdi:thermometer
+sensor.humidity_158d00010e5010:
+  friendly_name: 'Humidity'
+  icon: mdi:water-percent
+sensor.temperature_158d000106ebb2:
+  friendly_name: 'Temperature'
+  icon: mdi:thermometer
+light.gateway_light_286c0785a35e:
+  friendly_name: 'Rack Light'
+binary_sensor.door_window_sensor_158d00011251e1:
+  friendly_name: 'door_1_basement'
+binary_sensor.switch_158d0001268273:
+  friendly_name: 'switch_1_bedroom'
+binary_sensor.motion_sensor_158d00012a10ac:
+  friendly_name: 'pir_1_upstairs'
+binary_sensor.motion_sensor_158d000119fe69:
+  friendly_name: 'pir_2_diningroom'
+binary_sensor.motion_sensor_158d000119fea5:
+  friendly_name: 'pir_3_'
+binary_sensor.motion_sensor_158d0001307adf:
+  friendly_name: 'pir_4_'
+sensor.weather_wind_speed:
+  icon: mdi:weather-windy

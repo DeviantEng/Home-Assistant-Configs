@@ -6,57 +6,82 @@ rooms:
     - group.dining_room
     - group.living_room
     - group.tv_room
+    - group.master_bedroom
     - group.upstairs
     - group.office
     - group.garage
 
 kitchen:
   name: 'Kitchen'
+  control: hidden
   entities:
-    - light.light_kitchen_level_21_0
-    - lock.deadbolt_kitchen_locked_9_0
-    - sensor.kitchen_door_status
     - sensor.kitchen_motion
     - sensor.multisensor_kitchen_temperature_8_1
     - sensor.multisensor_kitchen_relative_humidity_8_5
+    - light.light_kitchen_level_21_0
+    - sensor.kitchen_door_status
+    - lock.deadbolt_kitchen_locked_9_0
+    - sensor.basement_door_status
 
 dining_room:
   name: 'Dining Room'
+  control: hidden
   entities:
-  - switch.lamp_diningroom_switch_20_0
+    - sensor.diningroom_motion
+    - switch.lamp_diningroom_switch_20_0
 
 living_room:
   name: 'Living Room'
+  control: hidden
   entities:
     - sensor.front_door_status
-    - switch.lamp_fishtank_switch_24_0
+    - switch.livingroom_lamp
+    - switch.plug_158d00012774a1
 
 tv_room:
   name: 'TV Room'
+  control: hidden
   entities:
-    - switch.lamp_tvroom_switch_22_0
     - sensor.tvroom_motion
+    - switch.lamp_tvroom_switch_22_0
     - sensor.gunsafe_motion
-    - sensor.ammosafe_door_status
     - sensor.multisensor_gunsafe_temperature_23_1
     - sensor.multisensor_gunsafe_relative_humidity_23_5
+    - sensor.ammosafe_door_status
+
+master_bedroom:
+  name: 'Master Bedroom'
+  control: hidden
+  entities:
+    - switch.lamp_masterbedroom_switch_24_0
 
 upstairs:
   name: 'Upstairs'
+  control: hidden
   entities:
-    - switch.upstairs_lamp
+    - sensor.upstairs_motion
+    - switch.lamp_upstairs_switch_39_0
 
 office:
   name: 'Office'
+  control: hidden
   entities:
-    - switch.office_lamp
     - sensor.office_motion
+    - sensor.temperature_158d000106ebb2
+    - sensor.officesafe_door_status
+    - switch.office_lamp
     - light.led_strip_office
     - input_select.led_strip_effect_office
     - input_slider.led_strip_speed_office
+    - light.gateway_light_286c0785a35e
+    - switch.powerstrip_office_switch_40_0_2
+    - switch.powerstrip_office_switch_40_0_3
+    - switch.powerstrip_office_switch_40_0_4
+    - switch.powerstrip_office_switch_40_0_6
 
 garage:
   name: 'Garage'
+  control: hidden
   entities:
     - switch.garage_exterior_lights
     - sensor.garage_door_status

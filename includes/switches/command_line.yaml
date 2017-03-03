@@ -1,7 +1,7 @@
 - platform: command_line
   switches:
     baby_bedtime:
-      friendly_name: 'Lullaby Music'
+      friendly_name: 'Sonos (Master BR) - Lullaby'
       command_state: if [[ $(/usr/bin/curl -s http://172.16.1.178:5005/Master%20Bedroom/state | python -c "import sys, json; print json.load(sys.stdin)['playbackState']") = PLAYING ]]; then echo "0"; else echo "1"; fi
       value_template: '{{ value == "0" }}'
       command_on: '/usr/bin/curl -X GET http://172.16.1.178:5005/Master%20Bedroom/volume/1 && /usr/bin/curl +X POST http://172.16.1.178:5005/Master%20Bedroom/favorite/Lullaby%20Radio'

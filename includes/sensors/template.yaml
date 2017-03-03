@@ -11,6 +11,17 @@
               FAILED
           {%- endif -%}
 
+    basement_door_status:
+      friendly_name: 'Basement Door'
+      value_template: >-
+          {%- if is_state("binary_sensor.door_window_sensor_158d00011251e1", "off") -%}
+              Closed
+          {%- elif is_state("binary_sensor.door_window_sensor_158d00011251e1", "on") -%}
+              Open
+          {%- else -%}
+              FAILED
+          {%- endif -%}
+
     kitchen_motion:
       friendly_name: 'Motion Detected?'
       value_template: >-
@@ -42,6 +53,17 @@
               FAILED
           {%- endif -%}
 
+    officesafe_door_status:
+      friendly_name: 'Office Safe'
+      value_template: >-
+          {%- if is_state("binary_sensor.door_officesafe_sensor_41_0", "off") -%}
+              Closed
+          {%- elif is_state("binary_sensor.door_officesafe_sensor_41_0", "on") -%}
+              Open
+          {%- else -%}
+              FAILED
+          {%- endif -%}
+
     tvroom_motion:
       friendly_name: 'Motion Detected?'
       value_template: >-
@@ -59,6 +81,28 @@
           {%- if is_state("binary_sensor.multisensor_office_sensor_38_0", "off") -%}
               No
           {%- elif is_state("binary_sensor.multisensor_office_sensor_38_0", "on") -%}
+              Yes
+          {%- else -%}
+              FAILED
+          {%- endif -%}
+
+    upstairs_motion:
+      friendly_name: 'Motion Detected?'
+      value_template: >-
+          {%- if is_state("binary_sensor.motion_sensor_158d00012a10ac", "off") -%}
+              No
+          {%- elif is_state("binary_sensor.motion_sensor_158d00012a10ac", "on") -%}
+              Yes
+          {%- else -%}
+              FAILED
+          {%- endif -%}
+
+    diningroom_motion:
+      friendly_name: 'Motion Detected?'
+      value_template: >-
+          {%- if is_state("binary_sensor.motion_sensor_158d000119fe69", "off") -%}
+              No
+          {%- elif is_state("binary_sensor.motion_sensor_158d000119fe69", "on") -%}
               Yes
           {%- else -%}
               FAILED
@@ -120,7 +164,59 @@
             {{ states.climate.thermostat_upstairs_cooling_1_31_2.attributes.temperature }}
         {% else %}
             OFF
-        {% endif %}      
+        {% endif %}   
+
+    weather_wind_speed:
+      friendly_name: 'Wind Speed'
+      unit_of_measurement: 'mph'
+      value_template: '{{ states.sensor.qubino_zmnhzdx_weather_station_velocity_44_6_4.state | multiply(2.23694) | round(1) }}'
+
+    weather_wind_direction:
+      friendly_name: 'Wind Direction'
+      value_template: >-
+        {% if states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 22.5 %}
+            North
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 67.5 %}
+            North-East
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 112.5 %}
+            East
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 157.5 %}
+            South-East
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 202.5 %}
+            South
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 247.5 %}
+            South-West
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 292.5 %}
+            West
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 327.5 %}
+            North-West
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 360 %}
+            North
+        {% else %}
+            FAILED
+        {% endif %}
+      icon_template: >-
+        {% if states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 22.5 %}
+            mdi:arrow-up
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 67.5 %}
+            mdi:arrow-top-right
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 112.5 %}
+            mdi:arrow-right
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 157.5 %}
+            mdi:arrow-bottom-right
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 202.5 %}
+            mdi:arrow-down
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 247.5 %}
+            mdi:arrow-bottom-left
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 292.5 %}
+            mdi:arrow-left
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float < 327.5 %}
+            mdi:arrow-top-left
+        {% elif states.sensor.qubino_zmnhzdx_weather_station_direction_44_7_2.state | float <= 360 %}
+            mdi:arrow-up
+        {% else %}
+            mdi:duck
+        {% endif %}
 
     climate_upstairs_batterylevel:
       friendly_name: 'Thermostat (Upstairs)'
@@ -152,15 +248,30 @@
       unit_of_measurement: '%'
       value_template: '{{ states.binary_sensor.door_ammosafe_sensor_33_0.attributes.battery_level }}'
 
+    door_officesafe_batterylevel:
+      friendly_name: 'Door Sensor (Office Safe)'
+      unit_of_measurement: '%'
+      value_template: '{{ states.binary_sensor.door_officesafe_sensor_41_0.attributes.battery_level }}'
+
     multisensor_tvroom_batterylevel:
       friendly_name: 'MultiSensor (TV Room)'
       unit_of_measurement: '%'
-      value_template: '{{ states.binary_sensor.multisensor_tvroom_sensor_28_0.attributes.battery_level }}'
+      value_template: >-
+        {% if states.binary_sensor.multisensor_tvroom_sensor_28_0.attributes.battery_level > 100 %}
+            100
+        {% else %}
+            '{{ states.binary_sensor.multisensor_tvroom_sensor_28_0.attributes.battery_level }}'
+        {% endif %}
 
     multisensor_office_batterylevel:
       friendly_name: 'MultiSensor (Office)'
       unit_of_measurement: '%'
-      value_template: '{{ states.binary_sensor.multisensor_office_sensor_38_0.attributes.battery_level }}'
+      value_template: >-
+        {% if states.binary_sensor.multisensor_office_sensor_38_0.attributes.battery_level > 100 %}
+            100
+        {% else %}
+            '{{ states.binary_sensor.multisensor_office_sensor_38_0.attributes.battery_level }}'
+        {% endif %}
 
     tilt_garagedoor_batterylevel:
       friendly_name: 'Tilt Sensor (Garage Door)'

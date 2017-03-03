@@ -27,6 +27,8 @@ recorder: !include includes/recorder.yaml
 
 sun: !include includes/sun.yaml
 
+xiaomi: !include includes/xiaomi.yaml
+
 zwave: !include includes/zwave.yaml
 
 

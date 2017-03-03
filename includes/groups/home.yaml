@@ -1,20 +1,32 @@
 default_view:
   view: yes
   entities:
+    - group.weather
     - group.home
     - group.scenes
 
-home:
-  name: 'Home'
+weather:
+  name: 'Weather'
+  control: hidden
   entities:
     - sensor.sun_state
-    - device_tracker.phone_derek_n6p
-    - device_tracker.phone_andrea_iphone6
-    - sensor.devplex
+    - sensor.temperature_158d00010e5010
+    - sensor.humidity_158d00010e5010
+    - sensor.weather_wind_speed
+    - sensor.weather_wind_direction
     - camera.uvm01
+
+home:
+  name: 'Home'
+  control: hidden
+  entities:
+    - device_tracker.phone_derek_pixelxl
+    - device_tracker.phone_andrea_pixel
+    - sensor.devlocal
 
 scenes:
   name: 'Scenes'
+  control: hidden
   entities:
     - scene.bedtime
     - switch.baby_bedtime

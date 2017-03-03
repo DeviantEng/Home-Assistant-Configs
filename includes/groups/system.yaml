@@ -6,6 +6,7 @@ system:
 
 batterylevels:
   name: 'Battery Levels'
+  control: hidden
   entities:
     - sensor.climate_downstairs_batterylevel
     - sensor.climate_upstairs_batterylevel
@@ -16,4 +17,5 @@ batterylevels:
     - sensor.door_kitchen_batterylevel
     - sensor.door_front_batterylevel
     - sensor.door_ammosafe_batterylevel
+    - sensor.door_officesafe_batterylevel
     - sensor.tilt_garagedoor_batterylevel

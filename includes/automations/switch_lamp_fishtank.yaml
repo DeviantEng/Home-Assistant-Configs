@@ -7,11 +7,11 @@
     after: '09:00'
   condition:
     condition: state
-    entity_id: switch.lamp_fishtank_switch_24_0
+    entity_id: switch.plug_158d00012774a1
     state: 'off'
   action:
     service: homeassistant.turn_on
-    entity_id: switch.lamp_fishtank_switch_24_0
+    entity_id: switch.plug_158d00012774a1
 
 #####
 ### Turn off Fish Tank Light at 11:00PM, if it's on
@@ -22,8 +22,8 @@
     after: '23:00'
   condition:
     condition: state
-    entity_id: switch.lamp_fishtank_switch_24_0
+    entity_id: switch.plug_158d00012774a1
     state: 'on'
   action:
     service: homeassistant.turn_off
-    entity_id: switch.lamp_fishtank_switch_24_0
+    entity_id: switch.plug_158d00012774a1

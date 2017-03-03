@@ -28,10 +28,10 @@
         entity_id: switch.garage_exterior_lights
         state: 'on'
       - condition: state
-        entity_id: 'device_tracker.phone_derek_n6p'
+        entity_id: device_tracker.phone_derek_pixelxl
         state: 'home'
       - condition: state
-        entity_id: 'device_tracker.phone_andrea_iphone6'
+        entity_id: device_tracker.phone_andrea_pixel
         state: 'home'
   action:
     service: homeassistant.turn_off

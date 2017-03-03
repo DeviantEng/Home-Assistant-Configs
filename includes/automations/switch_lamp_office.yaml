@@ -6,10 +6,6 @@
     platform: state
     entity_id: binary_sensor.multisensor_office_sensor_38_0
     to: 'on'
-#  condition:
-#    condition: sun
-#    after: sunset
-#    after_offset: '-01:00:00'
   condition:
     condition: or
     conditions:

@@ -1,2 +1,2 @@
-purge_days: 7
+purge_days: 14
 db_url: !secret recorder_db

@@ -1,5 +1,5 @@
 #####
-### Turn on Dining Room lamp 30 minutes before sunset, if it's off
+### Turn on Dining Room lamp 45 minutes before sunset, if it's off
 #####
 - alias: 'Dining Room Lamp On'
   trigger:

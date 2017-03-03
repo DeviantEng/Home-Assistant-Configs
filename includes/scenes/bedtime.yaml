@@ -5,9 +5,10 @@
   entities:
     light.bulb_office_level_37_0: off
     light.led_strip_office: off
-    light.bulb_upstairs_level_36_0: off
+    light.bulb_livingroom_level_36_0: off
     switch.lamp_tvroom_switch_22_0: off
     switch.lamp_diningroom_switch_20_0: off
+    switch.lamp_upstairs_switch_39_0: off
     switch.lamp_fishtank_switch_24_0: off
     switch.garage_exterior_lights: off
     light.light_kitchen_level_21_0: off

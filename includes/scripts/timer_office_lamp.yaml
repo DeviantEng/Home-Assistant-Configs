@@ -9,8 +9,8 @@ timer_office_lamp_on:
       entity_id: script.timer_office_lamp_off
 
 timer_office_lamp_off:
-  alias: 'Turn Off Office Lamp after delay'
+  alias: 'Turn off Office Lamp after delay'
   sequence:
-    - delay: '00:10:00'
+    - delay: '00:15:00'
     - service: light.turn_off
       entity_id: light.bulb_office_level_37_0
